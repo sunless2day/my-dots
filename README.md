@@ -1,7 +1,14 @@
-# Kitty Config
+# My personal dots
 
-Just a simple [kitty](https://sw.kovidgoyal.net/kitty/) configuration for personal use. Hosting it here so I can access it from other devices.
+Just a simple collection of configurations for personal use. Hosting it here so I can access it from other devices.
 
-## Usage
+You will have to manually move some files to their respective directories, but here is where I would put them:
 
-Copy `kitty.conf` to `~/.config/kitty/kitty.conf`.
+```sh
+mv zshrc ~/.zshrc
+mv dircolors ~/.dircolors
+mkdir -p ~/.config/nvim && mv init.lua ~/.config/nvim/
+mkdir -p ~/.config/kitty && mv kitty.conf ~/.config/kitty/
+```
+
+I don't promise they will work on your system, but they do on mine. After all, this is for me alone.
