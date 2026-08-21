@@ -1,0 +1,15 @@
+# Directories
+DIR 01;32        # bold green
+
+# Regular files (default)
+FILE 00;37       # white
+
+# C files
+*.c 01;34        # bold blue
+*.h 01;34        # headers too (optional)
+
+# Rust files (orange-ish)
+*.rs 01;38;5;208 # nice orange (256-color)
+
+# Python files
+*.py 01;33       # bold yellow
