@@ -7,7 +7,7 @@ You will have to manually move some files to their respective directories, but h
 ```sh
 mv zshrc ~/.zshrc
 mv dircolors ~/.dircolors
-mkdir -p ~/.config/nvim && mv init.lua ~/.config/nvim/
+mv nvim ~/.config/nvim
 mkdir -p ~/.config/kitty && mv kitty.conf ~/.config/kitty/
 ```
 
