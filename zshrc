@@ -8,10 +8,11 @@ alias q='exit'
 alias p='python'
 alias cc='clang'
 alias cr='cargo run'
+alias nv='nvim'
 
 # customizing PS
-PS1='%F{cyan}%n@%m%f %F{blue}%~%f'$'\n''%F{white}>>%f '
-#PS1='%F{blue}%~%f'$'\n''%F{white}>>%f '
+#PS1='%F{cyan}%n@%m%f %F{blue}%~%f'$'\n''%F{white}>>%f '
+PS1='%F{blue}%~%f'$'\n''%F{white}>>%f '
 # case insensitivity
 setopt nocaseglob
 
