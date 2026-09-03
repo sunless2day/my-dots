@@ -49,6 +49,8 @@ vim.keymap.set({ 'n', 'v' }, 'x', '"_x')
 vim.keymap.set({ 'n', 'v' }, 'X', '"_X')
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc><cmd>w<CR>', { desc = 'Save file' })
 
+vim.cmd [[cabbrev <expr> sh getcmdtype() == ":" && getcmdline() == "sh" ? "terminal" : "sh"]]
+
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
@@ -336,7 +338,7 @@ end
 vim.pack.add { gh 'stevearc/conform.nvim' }
 require('conform').setup {
   notify_on_error = false,
-  format_on_save = false, 
+  format_on_save = false,
   default_format_opts = { lsp_format = 'fallback' },
   formatters_by_ft = {
     rust = { 'rustfmt' },
