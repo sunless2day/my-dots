@@ -280,18 +280,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local servers = {
-  clangd = {},
+  clangd = {
+    init_options = {
+      fallbackFlags = { '-std=c23' },
+    },
+  },
   gopls = {},
-  rust_analyzer = {},
+  taplo = {},
+  rust_analyzer = {
+    workspace_required = false,
+
+    before_init = function(params, config)
+      local file = vim.api.nvim_buf_get_name(0)
+      local options = vim.deepcopy(config.settings['rust-analyzer'] or {})
+
+      local project = vim.fs.root(file, {
+        'Cargo.toml',
+        'rust-project.json',
+      })
+
+      if not project then options.detachedFiles = { file } end
+
+      params.initializationOptions = options
+    end,
+  },
   asm_lsp = {},
   ts_ls = {},
   html = {},
   cssls = {},
-  pyright = {
+  --[[ pyright = {
     settings = {
       python = { analysis = { inlayHints = { variableTypes = true, functionReturnTypes = true, callArgumentNames = true } } },
     },
-  },
+  }, ]]
+  pyrefly = {},
   stylua = {},
   lua_ls = {
     on_init = function(client)

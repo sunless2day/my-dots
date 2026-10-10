@@ -1,18 +1,19 @@
 #fastfetch
 
 # simple shortcuts
-alias cf='clear && fastfetch'
-alias ff='fastfetch'
+#alias cf='clear && fastfetch'
+#alias ff='fastfetch'
 alias sc='source ~/.zshrc'
 alias q='exit'
 alias p='python'
-alias cc='clang'
+alias cc='clang -std=c23'
 alias cr='cargo run'
 alias nv='nvim'
 
 # customizing PS
-#PS1='%F{cyan}%n@%m%f %F{blue}%~%f'$'\n''%F{white}>>%f '
-PS1='%F{blue}%~%f'$'\n''%F{white}>>%f '
+#PS1='%F{cyan}%n@%m%f %F{blue}%~%f'$'\n''%F{white}%❯f '
+PS1='%F{blue}%~%f'$'\t\t''%F{#c43b00}[%T]%f'$'\n''%F{white}❯%f '
+
 # case insensitivity
 setopt nocaseglob
 
@@ -60,3 +61,4 @@ alias cl='clear && printf "\e[3J"'
 
 #Adding cargo's binary folder to path
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.local/bin:$PATH"
